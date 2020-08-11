@@ -89,7 +89,7 @@ namespace Employee.Entities
         #region Methods
         public virtual double GetPaymentAmount()
         {
-            throw new NotImplementedException();
+            return pricePerItem * quantity;
         } 
         #endregion
     }

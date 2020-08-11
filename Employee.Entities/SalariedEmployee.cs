@@ -33,5 +33,12 @@
             }
         }
         #endregion
+
+        #region Methods
+        public override double GetPaymentAmount()
+        {
+            return weeklySalary * 4;
+        } 
+        #endregion
     }
 }

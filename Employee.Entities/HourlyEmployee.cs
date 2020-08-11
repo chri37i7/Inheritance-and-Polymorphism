@@ -50,5 +50,12 @@
             }
         }
         #endregion
+
+        #region Methods
+        public override double GetPaymentAmount()
+        {
+            return wage * hours;
+        } 
+        #endregion
     }
 }

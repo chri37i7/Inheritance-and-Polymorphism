@@ -48,6 +48,13 @@
                     commissionRate = value;
                 }
             }
+        }
+        #endregion
+
+        #region Methods
+        public override double GetPaymentAmount()
+        {
+            return grossSales / commissionRate;
         } 
         #endregion
     }
