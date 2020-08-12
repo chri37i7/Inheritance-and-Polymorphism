@@ -68,7 +68,7 @@ namespace Polymorfi.Entities
         #region Methods
         public virtual decimal GetAmount()
         {
-            throw new NotImplementedException();
+            return amount;
         } 
         #endregion
     }
