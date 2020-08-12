@@ -11,6 +11,9 @@ namespace ManualTests.ConsoleApp
             // PayableProcessor for processing payables
             PayableProcessor processor = new PayableProcessor(new Account(100000), new Account(250000));
 
+            // Output current values
+            Console.WriteLine($"Expenses Account: {processor.ExpensesAccount.Balance}");
+            Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
 
             // List containing different payable classes
             List<IPayable> payables = new List<IPayable>() {
@@ -19,9 +22,12 @@ namespace ManualTests.ConsoleApp
                 new ServiceSale(250, DateTime.UtcNow, 1),
             };
 
-
             // Process payables
             processor.Process(payables);
+
+            // Output new values
+            Console.WriteLine($"\nExpenses Account: {processor.ExpensesAccount.Balance}");
+            Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
         }
     }
 }
