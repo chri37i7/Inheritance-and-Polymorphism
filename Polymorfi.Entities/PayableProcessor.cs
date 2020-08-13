@@ -75,14 +75,14 @@ namespace Polymorfi.Entities
             {
                 if(payable is Sale)
                 {
-                    // Withdraw the expense
+                    // Deposit the amount
                     salesAccount.Deposit(payable.GetAmount());
                     // Set IsProcessed to true
                     payable.IsProcessed = true;
                 }
                 else if(payable is Expense)
                 {
-                    // Withdraw the expense
+                    // Withdraw the amount
                     expensesAccount.Withdraw(payable.GetAmount());
                     // Set IsProcessed to true
                     payable.IsProcessed = true;
