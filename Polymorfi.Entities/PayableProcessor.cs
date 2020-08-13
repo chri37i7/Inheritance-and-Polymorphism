@@ -73,17 +73,20 @@ namespace Polymorfi.Entities
         {
             foreach(IPayable payable in payables)
             {
+                // Get the amount
+                decimal amount = payable.GetAmount();
+
                 if(payable is Sale)
                 {
                     // Deposit the amount
-                    salesAccount.Deposit(payable.GetAmount());
+                    salesAccount.Deposit(amount);
                     // Set IsProcessed to true
                     payable.IsProcessed = true;
                 }
                 else if(payable is Expense)
                 {
                     // Withdraw the amount
-                    expensesAccount.Withdraw(payable.GetAmount());
+                    expensesAccount.Withdraw(amount);
                     // Set IsProcessed to true
                     payable.IsProcessed = true;
                 }
