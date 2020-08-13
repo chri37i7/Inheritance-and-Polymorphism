@@ -1,13 +1,21 @@
 ﻿namespace Polymorfi.Entities
 {
+    /// <summary>
+    /// Represents a <see cref="Product"/>
+    /// </summary>
     public class Product
     {
         #region Fields
-        protected string name;
-        protected decimal unitPrice; 
+        private string name;
+        private decimal unitPrice; 
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a new <see cref="Product"/> object
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="unitPrice"></param>
         public Product(string name, decimal unitPrice)
         {
             Name = name;
@@ -16,6 +24,9 @@
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Name of the <see cref="Product"/>
+        /// </summary>
         public virtual string Name
         {
             get
@@ -31,6 +42,9 @@
             }
         }
 
+        /// <summary>
+        /// Unit price of the <see cref="Product"/>
+        /// </summary>
         public virtual decimal UnitPrice
         {
             get

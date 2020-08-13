@@ -2,6 +2,9 @@
 
 namespace Polymorfi.Entities
 {
+    /// <summary>
+    /// Abstract baseclass for <see cref="Sale"/>'s implementing <see cref="IPayable"/>
+    /// </summary>
     public abstract class Sale : IPayable
     {
         #region Fields
@@ -15,10 +18,13 @@ namespace Polymorfi.Entities
         {
             Date = date;
             EmployeeId = employeeId;
-        } 
+        }
         #endregion
 
         #region Properties
+        /// <summary>
+        /// The date the <see cref="Sale"/> occurred
+        /// </summary>
         public virtual DateTime Date
         {
             get
@@ -31,6 +37,9 @@ namespace Polymorfi.Entities
             }
         }
 
+        /// <summary>
+        /// The <see cref="EmployeeId"/> of the employee who handled the <see cref="Sale"/>
+        /// </summary>
         public virtual int EmployeeId
         {
             get
@@ -43,6 +52,9 @@ namespace Polymorfi.Entities
             }
         }
 
+        /// <summary>
+        /// Has the <see cref="Sale"/> been processed yet
+        /// </summary>
         public virtual bool IsProcessed
         {
             get
@@ -57,10 +69,7 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Methods
-        public virtual decimal GetAmount()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract decimal GetAmount();
         #endregion
     }
 }

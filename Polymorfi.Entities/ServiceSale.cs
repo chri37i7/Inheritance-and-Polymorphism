@@ -2,6 +2,9 @@
 
 namespace Polymorfi.Entities
 {
+    /// <summary>
+    /// Represents a sale of a service
+    /// </summary>
     public class ServiceSale : Sale
     {
         #region Fields
@@ -17,13 +20,15 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Properties
+        /// <summary>
+        /// The money amount of the <see cref="ServiceSale"/>
+        /// </summary>
         public virtual decimal Amount
         {
             get
             {
                 return amount;
             }
-
             set
             {
                 if(amount != value)
@@ -35,6 +40,10 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Returns the <see cref="amount"/>
+        /// </summary>
+        /// <returns></returns>
         public override decimal GetAmount()
         {
             return amount;

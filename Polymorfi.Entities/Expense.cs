@@ -2,6 +2,9 @@
 
 namespace Polymorfi.Entities
 {
+    /// <summary>
+    /// Concreate class representing an <see cref="Expense"/>
+    /// </summary>
     public class Expense : IPayable
     {
         #region Fields
@@ -11,6 +14,11 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Creates a new <see cref="Expense"/> object
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="amount"></param>
         public Expense(DateTime date, decimal amount)
         {
             Date = date;
@@ -19,6 +27,9 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Properties
+        /// <summary>
+        /// The date of the <see cref="Expense"/>
+        /// </summary>
         public virtual DateTime Date
         {
             get
@@ -34,6 +45,9 @@ namespace Polymorfi.Entities
             }
         }
 
+        /// <summary>
+        /// The amount of the <see cref="Expense"/>
+        /// </summary>
         public virtual decimal Amount
         {
             get
@@ -66,6 +80,10 @@ namespace Polymorfi.Entities
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Returns the <see cref="amount"/> of the <see cref="Expense"/>
+        /// </summary>
+        /// <returns></returns>
         public virtual decimal GetAmount()
         {
             return amount;
