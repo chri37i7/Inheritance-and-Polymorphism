@@ -17,10 +17,13 @@ namespace ManualTests.ConsoleApp
             Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
 
 
-            // List containing different payable classes
+            // List containing different classes implementing IPayable
             List<IPayable> payables = new List<IPayable>() {
+                // Salary
                 new Salary(1, 1, 2020, 3, DateTime.UtcNow, 27000),
+                // ProductSale
                 new ProductSale(new Dictionary<Product, int>() { { new Product("Mundbind", 5), 5 }, }, DateTime.UtcNow, 1),
+                // ServiceSale
                 new ServiceSale(250, DateTime.UtcNow, 1),
             };
 
