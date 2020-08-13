@@ -28,6 +28,8 @@ namespace ManualTests.ConsoleApp
             // Output new values
             Console.WriteLine($"\nExpenses Account: {processor.ExpensesAccount.Balance}");
             Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
+
+            Console.ReadLine();
         }
     }
 }
