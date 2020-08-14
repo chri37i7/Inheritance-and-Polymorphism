@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employee.Entities", "Employee.Entities\Employee.Entities.csproj", "{E77C8F62-C21B-4AAE-A081-5D6E50A00C1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorfi.Entities", "Polymorfi.Entities\Polymorfi.Entities.csproj", "{95E2D762-1D98-414C-B130-579971B03376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorfi.Entities", "Polymorfi.Entities\Polymorfi.Entities.csproj", "{95E2D762-1D98-414C-B130-579971B03376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualTests.ConsoleApp", "ManualTests.ConsoleApp\ManualTests.ConsoleApp.csproj", "{B409F9E6-8BBC-40DA-A37B-43992C08FDDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManualTests.ConsoleApp", "ManualTests.ConsoleApp\ManualTests.ConsoleApp.csproj", "{B409F9E6-8BBC-40DA-A37B-43992C08FDDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementation.Entities", "Implementation.Entities\Implementation.Entities.csproj", "{D12F2016-B6E5-4E87-B7B0-A0C362040577}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B409F9E6-8BBC-40DA-A37B-43992C08FDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B409F9E6-8BBC-40DA-A37B-43992C08FDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B409F9E6-8BBC-40DA-A37B-43992C08FDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12F2016-B6E5-4E87-B7B0-A0C362040577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12F2016-B6E5-4E87-B7B0-A0C362040577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12F2016-B6E5-4E87-B7B0-A0C362040577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12F2016-B6E5-4E87-B7B0-A0C362040577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
