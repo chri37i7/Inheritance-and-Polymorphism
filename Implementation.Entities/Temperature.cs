@@ -6,16 +6,12 @@ namespace Implementation.Entities
     {
         #region Fields
         protected double celcius;
-        protected double farenheit;
-        protected string text;
         #endregion
 
         #region Constructor
-        public Temperature(double celcius, double farenheit, string text)
+        public Temperature(double celcius)
         {
             Celcius = celcius;
-            Farenheit = farenheit;
-            Text = text;
         }
         #endregion
 
@@ -39,14 +35,7 @@ namespace Implementation.Entities
         {
             get
             {
-                return farenheit;
-            }
-            set
-            {
-                if(farenheit != value)
-                {
-                    farenheit = value;
-                }
+                return (Celcius * 9) / 5 + 32;
             }
         }
 
@@ -54,20 +43,54 @@ namespace Implementation.Entities
         {
             get
             {
-                return text;
-            }
-            set
-            {
-                if(text != value)
-                {
-
-                    text = value;
-                }
+                return TemperatureText();
             }
         }
         #endregion
 
-        #region Method Implementations & Overrides
+        #region Methods
+        private string TemperatureText()
+        {
+            if(Celcius < -30)
+            {
+                return "Blistering cold!";
+            }
+            else if(Celcius >= -30 && Celcius <= -10)
+            {
+                return "Everything has frozen!";
+            }
+            else if(Celcius > -10 && Celcius <= 0)
+            {
+                return "It's Somewhat cold!";
+            }
+            else if(Celcius > 0 && Celcius <= 10)
+            {
+                return "It's Cold!";
+            }
+            else if(Celcius > 10 && Celcius <= 20)
+            {
+                return "It's Warm!";
+            }
+            else if(Celcius > 20 && Celcius <= 30)
+            {
+                return "It's very warm!";
+            }
+            else if(Celcius > 30 && Celcius <= 40)
+            {
+                return "California is on fire!";
+            }
+            else if(Celcius > 40)
+            {
+                return "Australia has burnt down";
+            }
+            else
+            {
+                return string.Empty;
+            }
+        } 
+        #endregion
+
+        #region Interface Implementations & Method Overrides
 
         #region Equals Implementation And Override
         /// <summary>
@@ -129,7 +152,7 @@ namespace Implementation.Entities
         public override string ToString()
         {
             return $"Celcius: {Celcius}, Farenheit: {Farenheit}, Text: {Text}";
-        } 
+        }
         #endregion
 
         #region CompareTo Implementation
@@ -140,6 +163,12 @@ namespace Implementation.Entities
         /// <returns></returns>
         public virtual int CompareTo(Temperature temperature)
         {
+            // Null Check
+            if(temperature == null)
+            {
+                return 1;
+            }
+
             // Compare properties
             int result = Celcius.CompareTo(temperature.Celcius);
 
@@ -167,9 +196,6 @@ namespace Implementation.Entities
         {
             // Create shallow copy of current object
             Temperature clone = (Temperature)MemberwiseClone();
-
-            // Clone Text
-            clone.Text = (string)Text.Clone();
 
             // Return the cloned object
             return clone;

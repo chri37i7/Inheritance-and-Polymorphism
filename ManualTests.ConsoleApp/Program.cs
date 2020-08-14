@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using Implementation.Entities;
-using Polymorfi.Entities;
 
 namespace ManualTests.ConsoleApp
 {
@@ -16,10 +14,11 @@ namespace ManualTests.ConsoleApp
         public static void CloneTest()
         {
             // Arrange
-            Temperature firstTemperature = new Temperature(69, 156.2, "Nicely Hot");
+            Temperature firstTemperature;
             Temperature secondTemperature;
 
             // Act
+            firstTemperature = new Temperature(69);
             secondTemperature = firstTemperature.Clone() as Temperature;
 
             // Assert
@@ -29,11 +28,11 @@ namespace ManualTests.ConsoleApp
         #endregion
 
         #region CompareTo Implementation Test
-        public static void CompareToTest()
+        public static void CompareTest()
         {
             // Arrange
-            Temperature firstTemperature = new Temperature(69, 156.2, "Nicely Hot");
-            Temperature secondTemperature = new Temperature(69, 156.2, "Nicely Hot");
+            Temperature firstTemperature = new Temperature(69);
+            Temperature secondTemperature = new Temperature(69);
 
             // Act
             int result = firstTemperature.CompareTo(secondTemperature);
@@ -44,37 +43,52 @@ namespace ManualTests.ConsoleApp
         }
         #endregion
 
-        #region IPayable Test
-        public static void IPayableTest()
+        #region Equals Tests
+        public static void TrueEqualityTest()
         {
-            // PayableProcessor for processing payables
-            PayableProcessor processor = new PayableProcessor(new Account(100000), new Account(250000));
+            // Arrange
+            Temperature firstTemperature;
+            Temperature secondTemperature;
 
+            // Act
+            firstTemperature = new Temperature(69);
+            secondTemperature = new Temperature(69);
 
-            // Output current values
-            Console.WriteLine($"Expenses Account: {processor.ExpensesAccount.Balance}");
-            Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
+            // Assert
+            Console.WriteLine(firstTemperature.Equals(secondTemperature));
+            Console.ReadLine();
+        }
 
+        public static void FalseEqualityTest()
+        {
+            // Arrange
+            Temperature firstTemperature;
+            Temperature secondTemperature;
 
-            // List containing different classes implementing IPayable
-            List<IPayable> payables = new List<IPayable>() {
-                // Salary
-                new Salary(1, 1, 2020, 3, DateTime.UtcNow, 27000),
-                // ProductSale
-                new ProductSale(new Dictionary<Product, int>() { { new Product("Mundbind", 5), 5 }, }, DateTime.UtcNow, 1),
-                // ServiceSale
-                new ServiceSale(250, DateTime.UtcNow, 1),
-            };
+            // Act
+            firstTemperature = new Temperature(69);
+            secondTemperature = new Temperature(69);
 
+            // Assert
+            Console.WriteLine(firstTemperature.Equals(secondTemperature));
+            Console.ReadLine();
+        }
+        #endregion
 
-            // Process payables
-            processor.Process(payables);
+        #region GetHashCode Test
+        public static void GetHashCodeTest()
+        {
+            // Arrange
+            Temperature firstTemperature = new Temperature(69);
+            Temperature secondTemperature = new Temperature(69);
 
+            // Act
+            int firstHash = firstTemperature.GetHashCode();
+            int secondHash = secondTemperature.GetHashCode();
 
-            // Output new values
-            Console.WriteLine($"\nExpenses Account: {processor.ExpensesAccount.Balance}");
-            Console.WriteLine($"Sales Account: {processor.SalesAccount.Balance}");
-
+            // Assert
+            Console.WriteLine(firstHash);
+            Console.WriteLine(secondHash);
             Console.ReadLine();
         }
         #endregion
