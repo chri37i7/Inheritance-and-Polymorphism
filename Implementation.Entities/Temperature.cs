@@ -165,10 +165,13 @@ namespace Implementation.Entities
         /// <returns></returns>
         public virtual object Clone()
         {
-            // Create shallow copy
-            object clone = MemberwiseClone();
+            // Create shallow copy of current object
+            Temperature clone = (Temperature)MemberwiseClone();
 
-            // Return
+            // Clone Text
+            clone.Text = (string)Text.Clone();
+
+            // Return the cloned object
             return clone;
         }
         #endregion

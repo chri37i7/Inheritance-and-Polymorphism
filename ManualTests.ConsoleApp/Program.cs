@@ -28,8 +28,8 @@ namespace ManualTests.ConsoleApp
         }
         #endregion
 
-        #region Temperature CompareTo Test
-        public static void TemperatureTest()
+        #region CompareTo Implementation Test
+        public static void CompareToTest()
         {
             // Arrange
             Temperature firstTemperature = new Temperature(69, 156.2, "Nicely Hot");
